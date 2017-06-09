@@ -31,10 +31,10 @@ test_script:
   - cd xgboost
   - 'SET HADOOP_HOME=%CD%'
   - cd jvm-packages
-  - mvn -q package -pl :xgboost4j
+  - mvn -q package -pl :xgboost4j,:xgboost4j-spark
   # 'kryoSerializer test' in xgboost4j-spark seems to fail on Windows.
   # The issue has been reported upstream, see dmlc/xgboost#2394.
-  - mvn -q package -pl :xgboost4j-spark -am -DskipTests -Dmaven.test.skip
+  # - mvn -q package -pl :xgboost4j-spark -am -DskipTests -Dmaven.test.skip
   - 'copy xgboost4j\target\xgboost4j-%XGBOOST_VERSION%.jar
          %APPVEYOR_BUILD_FOLDER%\xgboost4j-%XGBOOST_VERSION%-win64.jar'
   - 'copy xgboost4j-spark\target\xgboost4j-spark-%XGBOOST_VERSION%.jar

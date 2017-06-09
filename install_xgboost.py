@@ -66,6 +66,36 @@ if __name__ == "__main__":
         "// Copyright by Contributors",
         "#include <algorithm>")
 
+    if sys.platform == "win32":
+        sed_inplace(
+            "jvm-packages\\xgboost4j\\src\\main\\java\\ml\\dmlc\\xgboost4j\\java\\RabitTracker.java",
+            "private void stop()",
+            "public void stop()")
+        sed_inplace(
+            "jvm-packages\\xgboost4j\\src\\main\\java\\ml\\dmlc\\xgboost4j\\java\\IRabitTracker.java",
+            "boolean start(long workerConnectionTimeout);",
+            "boolean start(long workerConnectionTimeout); default void stop() {};")
+        sed_inplace(
+            "jvm-packages\\xgboost4j-spark\\src\\main\\scala\\ml\\dmlc\\xgboost4j\\scala\\spark\\XGBoost.scala",
+            "val tracker = startTracker(nWorkers, trackerConf)",
+            "val tracker = startTracker(nWorkers, trackerConf); \ntry {")
+        sed_inplace(
+            "jvm-packages\\xgboost4j-spark\\src\\main\\scala\\ml\\dmlc\\xgboost4j\\scala\\spark\\XGBoost.scala",
+            "isClsTask)",
+            "isClsTask) } finally { tracker.stop() }")
+        sed_inplace(
+            "jvm-packages\\pom.xml",
+            "<failOnViolation>true</failOnViolation>",
+            "<failOnViolation>false</failOnViolation>")
+        sed_inplace(
+            "jvm-packages\\pom.xml",
+            "<maven.compiler.source>1.7</maven.compiler.source>",
+            "<maven.compiler.source>1.8</maven.compiler.source>")
+        sed_inplace(
+            "jvm-packages\\pom.xml",
+            "<maven.compiler.target>1.7</maven.compiler.target>",
+            "<maven.compiler.target>1.8</maven.compiler.target>")
+
     os.chdir("jvm-packages")
     run("mvn -q -B versions:set -DnewVersion=" + os.environ["XGBOOST_VERSION"])
 
