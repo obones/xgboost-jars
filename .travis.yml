@@ -12,11 +12,11 @@ matrix:
 
 env:
   global:
-    - XGBOOST_VERSION=0.7-criteo-20170821101514
+    - XGBOOST_VERSION=0.7-20170913161514
     - LIBHDFS_DIR=$HOME/libhdfs-dev
     - HADOOP_VERSION=2.6.0-cdh5.5.0
-    - SCALA_VERSION=2.10.6
-    - SPARK_VERSION=2.1.0
+    - SCALA_VERSION=2.11.0
+    - SPARK_VERSION=2.1.1
 
 before_install:
   - git submodule foreach --recursive git pull origin master
@@ -46,7 +46,7 @@ cache:
 deploy:
   provider: releases
   api_key:
-    secure: tCV+MeGvnSGoVYuf7QLnRUMHPNUdu6H0lsYNjY6r1e05SsmaUZNiZJKoRdw+wv/aIZI3sqJIfd3TviVZoGwcRQnTxsKgA3r+sQWt2mu3ABojynkgyyclIrIHyUhjUtyXAaRDx07GDgMflLDQ3cQEE8f8/7gLQftXdehdM64hGEuw7YSgPOh3sq/N8H48pIlPffSJb4zVGrpFhpLsfOPurXyeifhHvcPq7kvcAVxJA7BsnvN1rh9ORZe7LBtfNb0m20rGEc+t5t4SKPHlRjuVAc7RGjEzRwJuNLYB6o8kNJgHAu+E6VjryheuwfVwOQ0ez7QpkdpClwfGFutuOELOTCqEvh6QTlwc0Dz5acfQ+DZqhP/DFUKDTntXuk7wrIPBMDgR9MOduXGYojfQeQJzp2E/vuZ1aSq21+qHy0HXLQTs3fYTw9gmg/oz6o/EwFKy9qdcgH3Dl6Ay/XWw4JooL3t7hasOFjc8EObP2+39pOcl+TiLpEzGgSzPNqfHb+PpE2jrfip5tc1wcR3EHYCHmdrAZBhL6oUeAEZ5pwulcBBBHrbApN8FoFtopcIAht3hdbbK0NhbNzL2ZxyAbsmZHQqV9BnoVrfOSrnK0uFuht2Q4xj0j9q3ianCrHOOEnYwo+6993OEEMLtRPxIN09mZuK43kuKIUGc0Qmv9hQxMr4=
+    secure: e2k7uYH/Pfi5Wgnd1y7yb57exBSH/Qshy37i04Hnu6ln22Ojgi7lSdYLo+z5EvjmN7iSvw/6t1arEKy2zeUB9JipF7br+FiR4K13FObJV6vYK1w+sQRRNn4N7HsX1mlzvXehvBYf1RjYhEaEQcvfsU+w3kHN1ywoX7beQ+CUGYcxACE2xoO9p2bGuC/dj7gMr/t3IxbbiLjMq6rBJ+sI/Pvfw4mLdfeGf5M/3zuCo8VuBhuHQf0+6OneboHaA3OE2EickMux0CzsQaJLhXh9huBjaybyrTvoz7blIzIAfXqw3w9DwGYeZf9e+CwWDo9wdTiLGW7JTOllTGDs7wHd06fhpWzrrqqJjs+9VTd/9RGMh2pCBE8eywPQGEDCPpASXTdYvJdHBZTyQvHPF+9j5GnQmR2p3vN+XiUdLQFxXsC8DgqlDKPAfulj5su9nnJJnvpJ3HkzoZqxWh4Iz2uTbMzCDMZq1qiYyrZIgQ5RP6Z7fJ10bXPrpoUPM0cLRNz10aOr67XKJeF0q+5FesqXifM6YLiH+RjFxXS7Z0FWE9QIemB/zJ4kvd/1c2uywP3tadN5sWKRxNb71caUVQBM2SIzEZAot2wcGA9OltsAi6AZf6GHv8PmNUU76Oj9Q3z5/A8NYYbhbU/jX6SYDODgLJcdwtY5ffcVl16JasjxRIg=
   file:
     - xgboost4j-$XGBOOST_VERSION-$TRAVIS_OS_NAME.jar
     - xgboost4j-spark-$XGBOOST_VERSION.jar

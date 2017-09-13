@@ -1,10 +1,10 @@
 xgboost4j
 =========
 
-[![Build Status](https://travis-ci.org/criteo-forks/xgboost-jars.svg?branch=master)](https://travis-ci.org/criteo-forks/xgboost-jars)
-[![Build status](https://ci.appveyor.com/api/projects/status/puy22q7qp1u8eg7f/branch/master?svg=true)](https://ci.appveyor.com/project/superbobry/xgboost-jars/branch/master)
+[![Build Status](https://travis-ci.org/obones/xgboost-jars.svg?branch=master)](https://travis-ci.org/obones/xgboost-jars)
+[![Build status](https://ci.appveyor.com/api/projects/status/7otoobqx43sd0hja?svg=true)](https://ci.appveyor.com/project/obones/xgboost-jars/branch/master)
 
-Repository to build [xgboost4j](https://github.com/criteo-forks/xgboost) JARs.
+Repository to build [xgboost4j](https://github.com/obones/xgboost) JARs.
 
 Build
 -----
@@ -18,8 +18,8 @@ Otherwise, the following versions of the dependencies are used
 
 ```
 HADOOP_VERSION=2.6.0-cdh5.5.0
-SPARK_VERSION=2.1.0
-SCALA_VERSION=2.10.6
+SPARK_VERSION=2.1.1
+SCALA_VERSION=2.11.0
 ```
 
 You could probably change them to more recent/different version, but this has

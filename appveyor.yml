@@ -3,11 +3,11 @@ image: Visual Studio 2015
 
 environment:
   global:
-    XGBOOST_VERSION: 0.7-criteo-20170821101514
+    XGBOOST_VERSION: 0.7-20170913161514
     LIBHDFS_DIR: '%APPVEYOR_BUILD_FOLDER%\libhdfs-dev'
     HADOOP_VERSION: 2.6.0-cdh5.5.0
-    SPARK_VERSION: 2.1.0
-    SCALA_VERSION: 2.10.6
+    SPARK_VERSION: 2.1.1
+    SCALA_VERSION: 2.11.0
   matrix:
     - JAVA_HOME: C:\Program Files\Java\jdk1.8.0
     # - JAVA_HOME: C:\Program Files (x86)\Java\jdk1.8.0
@@ -60,6 +60,6 @@ deploy:
   description: ''
   force_update: true
   auth_token:
-    secure: 'GAsVDc+Y0V9vOCuF+W9l7RVr2r1IoOgRfuRm6Jgd3fjIgylg2C4wudvzI25D4XYD'
+    secure: 'ecwgdV5yqUXYWY5lzGwjSb4Dnl0jhku+EOVQJjLK/Au00YBIq3RVOB3YFg1deNPM'
   on:
     appveyor_repo_tag: true
