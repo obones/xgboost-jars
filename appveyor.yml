@@ -17,8 +17,8 @@ environment:
 clone_script:
   - git clone -q --branch=%APPVEYOR_REPO_BRANCH% https://github.com/%APPVEYOR_REPO_NAME%.git %APPVEYOR_BUILD_FOLDER%
   - cd %APPVEYOR_BUILD_FOLDER%
-  - git config user.email "%GIT_EMAIL%"
-  - git config user.name "%GIT_USER%"
+  - git config --global user.email "%GIT_EMAIL%"
+  - git config --global user.name "%GIT_USER%"
   - git checkout -qf %APPVEYOR_REPO_COMMIT%
   - git submodule update --init --recursive
   - git submodule foreach --recursive git pull origin master
