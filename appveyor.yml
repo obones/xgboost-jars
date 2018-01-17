@@ -28,6 +28,7 @@ clone_script:
   - git pull origin master
   - cd "%APPVEYOR_BUILD_FOLDER%\xgboost\nccl"
   - git pull origin master
+  - cd %APPVEYOR_BUILD_FOLDER%
 
 install:
   - 'SET PATH=%VS140COMNTOOLS%\..\IDE;C:\Python36-x64;%PATH%'
