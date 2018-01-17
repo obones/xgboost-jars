@@ -20,6 +20,13 @@ env:
 
 before_install:
 #  - git submodule foreach --recursive git pull origin master
+  - cd xgboost/dmlc-core
+  - git pull origin master
+  - cd ../rabit
+  - git pull origin master
+  - cd ../nccl
+  - git pull origin master
+  - cd ..
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update; fi
 
 install:
