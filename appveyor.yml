@@ -3,7 +3,7 @@ image: Visual Studio 2015
 
 environment:
   global:
-    XGBOOST_VERSION: 0.7-20180117145500
+    XGBOOST_VERSION: 0.7-20180117153500
     LIBHDFS_DIR: '%APPVEYOR_BUILD_FOLDER%\libhdfs-dev'
     HADOOP_VERSION: 2.6.0-cdh5.5.0
     SPARK_VERSION: 2.1.1
@@ -21,7 +21,7 @@ clone_script:
   - git config --global user.name "%GIT_USER%"
   - git checkout -qf %APPVEYOR_REPO_COMMIT%
   - git submodule update --init --recursive
-  - git submodule foreach --recursive git pull origin master
+#  - git submodule foreach --recursive git pull origin master
 
 install:
   - 'SET PATH=%VS140COMNTOOLS%\..\IDE;C:\Python36-x64;%PATH%'
