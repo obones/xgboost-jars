@@ -20,15 +20,13 @@ clone_script:
   - git config --global user.email "%GIT_EMAIL%"
   - git config --global user.name "%GIT_USER%"
   - git checkout -qf %APPVEYOR_REPO_COMMIT%
-  - git submodule update --init --recursive
+#  - git submodule update --init --recursive
 #  - git submodule foreach --recursive git pull origin master
-  - cd "%APPVEYOR_BUILD_FOLDER%\xgboost\dmlc-core"
-  - git pull origin master
-  - cd "%APPVEYOR_BUILD_FOLDER%\xgboost\rabit"
-  - git pull origin master
-  - cd "%APPVEYOR_BUILD_FOLDER%\xgboost\nccl"
-  - git pull origin master
-  - cd %APPVEYOR_BUILD_FOLDER%
+  - git submodule update --init 
+  - cd xgboost
+  - git pull origin master 
+  - git submodule update --init 
+  - cd ..
 
 install:
   - 'SET PATH=%VS140COMNTOOLS%\..\IDE;C:\Python36-x64;%PATH%'
