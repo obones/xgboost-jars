@@ -12,10 +12,10 @@ matrix:
 
 env:
   global:
-    - XGBOOST_VERSION=0.7-20180119110000
+    - XGBOOST_VERSION=0.7-20180119155000
     - LIBHDFS_DIR=$HOME/libhdfs-dev
     - HADOOP_VERSION=2.6.0-cdh5.5.0
-    - SCALA_VERSION=2.11.0
+    - SCALA_VERSION=2.11.12
     - SPARK_VERSION=2.1.1
 
 before_install:
