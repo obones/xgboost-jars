@@ -24,7 +24,7 @@ clone_script:
 #  - git submodule foreach --recursive git pull origin master
   - git submodule update --init 
   - cd xgboost
-  - git pull origin master 
+  - git pull origin 0.7_working # master 
   - git submodule update --init 
   - cd ..
 
